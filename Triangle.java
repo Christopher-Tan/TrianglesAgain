@@ -18,5 +18,18 @@ public class Triangle {
         double s = getPerimeter() / 2.0;
         return Math.sqrt(s * (s - v1.distanceTo(v2)) * (s - v2.distanceTo(v3)) * (s - v3.distanceTo(v1)));
     }
-
+    public String classify() {
+        double a = v1.distanceTo(v2);
+        double b = v2.distanceTo(v3);
+        double c = v3.distanceTo(v1);
+        if (a == b && b == c) {
+            return "equilateral";
+        } else {
+            if (a == b || b == c) {
+                return "isosceles";
+            } else {
+                return "scalene";
+            }
+        }
+    }
 }
