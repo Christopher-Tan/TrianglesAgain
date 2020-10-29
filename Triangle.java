@@ -19,13 +19,13 @@ public class Triangle {
         return Math.sqrt(s * (s - v1.distanceTo(v2)) * (s - v2.distanceTo(v3)) * (s - v3.distanceTo(v1)));
     }
     public String classify() {
-        double a = v1.distanceTo(v2);
-        double b = v2.distanceTo(v3);
-        double c = v3.distanceTo(v1);
+        double a = Math.round(10000.0 * v1.distanceTo(v2)) / 10000.0;
+        double b = Math.round(10000.0 * v2.distanceTo(v3)) / 10000.0;
+        double c = Math.round(10000.0 * v3.distanceTo(v1)) / 10000.0;
         if (a == b && b == c) {
             return "equilateral";
         } else {
-            if (a == b || b == c) {
+            if (a == b || b == c || a == c) {
                 return "isosceles";
             } else {
                 return "scalene";
@@ -33,6 +33,21 @@ public class Triangle {
         }
     }
     public String toString() {
-        return "v1(" + v1.getX() + "," + v1.getY() + ") v2(" + v2.getX() + "," + v2.getY() + ") v3(" + v3.getX() + "," + v3.getY() + ")";
+        return "v1(" + v1.getX() + ", " + v1.getY() + ") v2(" + v2.getX() + ", " + v2.getY() + ") v3(" + v3.getX() + ", " + v3.getY() + ")";
+    }
+    public void setVertex(int index, Point newP) {
+        if (index == 0) {
+            v1 = newP;
+            return;
+        }
+        if (index == 1) {
+            v2 = newP;
+            return;
+        }
+        if (index == 2) {
+            v3 = newP;
+            return;
+        }
+        System.out.println("ERROR: Please type in 0, 1, or 2");
     }
 }

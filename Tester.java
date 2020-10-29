@@ -25,5 +25,8 @@ public class Tester {
         //tostring
         System.out.println(t1);
         System.out.println(t2);
+        //mutator
+        t1.setVertex(0,new Point(0,10));
+        System.out.println(t1);
     }
 }
