@@ -11,5 +11,8 @@ public class Tester {
         Point v3 = new Point(1,5);
         Triangle t1 = new Triangle(v1, v2, v3);
         Triangle t2 = new Triangle(0,5,2,6,5,1);
+        //Perimeter
+        System.out.println(t1.getPerimeter());
+        System.out.println(t2.getPerimeter());
     }
 }
