@@ -22,5 +22,8 @@ public class Tester {
         System.out.println(t2.classify());
         System.out.println(new Triangle(0,0,2,0,1,5).classify());
         System.out.println(new Triangle(0,0,6,0,3,Math.sqrt(27)).classify());
+        //tostring
+        System.out.println(t1);
+        System.out.println(t2);
     }
 }
