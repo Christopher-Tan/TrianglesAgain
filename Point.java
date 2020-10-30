@@ -19,6 +19,6 @@ public class Point {
         return Math.sqrt((y - other.y) * (y - other.y) + (x - other.x) * (x - other.x));
     }
     public boolean equals(Point other) {
-        return (x == other.x && y == other.y);
+        return (other != null && x == other.x && y == other.y);
     }
 }
